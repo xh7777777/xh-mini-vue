@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "target": "esnext",                // 输出的 JavaScript 版本
+      "module": "esnext",                // 使用 ES 模块系统
+      "moduleResolution": "node",        // 模块解析策略
+      "strict": true,                    // 启用严格类型检查
+      "esModuleInterop": true,           // 允许 default 导入不符合 ES 模块规范的 CommonJS 模块
+      "skipLibCheck": true,              // 跳过库文件的类型检查
+      "forceConsistentCasingInFileNames": true,  // 强制文件名大小写一致
+      "outDir": "./dist",                // 输出目录
+      "baseUrl": "./src",                // 基准路径
+      "allowJs": true,                   // 允许 JavaScript 文件参与编译
+      "resolveJsonModule": true          // 允许导入 JSON 文件
+    },
+    "include": [
+      "src/**/*"
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  

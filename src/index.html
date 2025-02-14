@@ -16,6 +16,19 @@
         message: 'Hello, Mini Vue!'
       }
     });
+    const vNode = {
+        tag: 'div',
+        props: {
+            class: 'abc',
+            onClick: () => {
+                console.log(666)
+            }
+        },
+        children: 'Hello, hhaha'
+    }
+    console.log(app)
+    const appDom = document.querySelector('#app')
+    app.mountElement(vNode, appDom)
   </script>
 </body>
 </html>

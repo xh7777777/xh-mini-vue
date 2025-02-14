@@ -1,6 +1,7 @@
 // src/index.ts
 import { VNode, Component } from './type/type';
 import { render } from './core/render';
+import { reactive, bucket, effect } from 'core/reactive';
 
 class MiniVue {
   el: string;
@@ -36,6 +37,16 @@ class MiniVue {
       this.mountComponent(vNode as Component, container);
     }
   }
+
+  public reactive(obj: any) {
+    return reactive(obj);
+  }
+
+  public effect(fn: () => void) {
+    return effect(fn);
+  }
 }
 
+
 export default MiniVue;
+

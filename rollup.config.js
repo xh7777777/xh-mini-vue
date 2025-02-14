@@ -6,7 +6,7 @@ export default {
     file: 'dist/mini-vue.js',
     format: 'umd',
     name: 'MiniVue',
-    sourcemap: true
+    sourcemap: true,
   },
   plugins: [
     babel({

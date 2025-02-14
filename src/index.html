@@ -6,16 +6,24 @@
   <title>Mini Vue</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
 
+  </div>
+  <button id="effect" class="effect">test</button>
   <script src="../dist/mini-vue.js"></script>
   <script>
+    console.log(MiniVue)
     const app = new MiniVue({
       el: '#app',
       data: {
         message: 'Hello, Mini Vue!'
       }
     });
+
+    const data = app.reactive({
+        text: 'hello world'
+    })
+
     const vNode = {
         tag: 'div',
         props: {
@@ -26,9 +34,21 @@
         },
         children: 'Hello, hhaha'
     }
-    console.log(app)
     const appDom = document.querySelector('#app')
     app.mountElement(vNode, appDom)
+    app.effect(() => {
+        appDom.innerText = data.text
+    })
+
+    const btn = document.querySelector('.effect')
+    console.log(btn)
+    btn.addEventListener('click', () => {
+        data.text = '33332'
+    })
+    setTimeout(() => {
+        data.notExist = '123'
+        console.log('定时')
+    }, 1000)
   </script>
 </body>
 </html>
